@@ -39,13 +39,13 @@ where
 # area_code
 select
 	A.name as '회원 1', B.name as '회원 2', A.area_code
-where
-	-- 중복 제거
-    A.member_id < B.member_id
 from
 	`members` A
     join `members` B
-    on A.area_code = B.area_code;
+    on A.area_code = B.area_code
+where
+	-- 중복 제거
+    A.member_id < B.member_id;
     
 # 등급이 같은 회원끼리 묶기 #
 select
